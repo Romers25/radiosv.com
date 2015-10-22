@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <link href="css/estilo.css" media="screen" rel="stylesheet" type="text/css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="jQueryRotate.js" type="text/javascript"></script>
+        <script>
+       	$(document).ready(function(){
+		 	$(".contenedor-imagen").mouseenter(function() {
+ 				$(this).find('img').animate({width:250,height:250,left:-25,top:-25});
+				$(this).find('img').rotate({animateTo:8});
+  			}).mouseleave(function() {
+  				$(this).find('img').animate({width:200,height:200,left:0,top:0});
+				$(this).find('img').rotate({animateTo:0});
+  			});
+		});
+        </script>
+
+        <style type="text/css" >
+
+        	.contenedor-imagen{
+        		width:200px;
+        		height:200px;
+        		float:left;
+        		overflow:hidden;
+        		border:1px solid #ddd;
+        		margin:15px;
+        		text-align:center;
+        	}
+
+        	.contenedor-imagen img{
+        		position: relative;
+        	}
+        </style>
+
+    </head>
+    <body>
+
+        <div class="contenedor-imagen">
+        	<img src="img.jpg" id="imagen1"/>
+        </div>
+        <div class="contenedor-imagen">
+        	<img src="img2.jpg" id="imagen1"/>
+        </div>
+    </body>
+</html>
